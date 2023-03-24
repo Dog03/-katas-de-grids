@@ -35,30 +35,34 @@ body {
     grid-gap: 1em;
     grid-template-areas:
         "header    header"
-        "content   content"
-        "sidebar   sidebar2"
+        "image     image"
+        "content   sidebar"
+        "sidebar2   sidebar2"
+        "content2   content2"
         "footer    footer"
 }
 
 @media only screen and (min-width: 500px) {
     .wrapper {
-        grid-template-columns: 20% auto;
+        grid-template-columns: auto;
         grid-template-areas:
-            "header   header"
-            "sidebar  content"
-            "sidebar2 sidebar2"
-            "footer   footer";
+            "header   header   header"
+            "image    image    image"
+            "content  sidebar  sidebar2"
+            "content2 content2 content2"
+            "footer   footer   footer";
     }
 }
 
 @media only screen and (min-width: 600px) {
     .wrapper {
         grid-gap: 20px;
-        grid-template-columns: 120px 120px auto;
+        grid-template-columns: auto 120px 120px;
         grid-template-areas:
-            "header  header  header"
-            "sidebar sidebar2 content"
-            "footer  footer  footer";
+            "header  image  image"
+            "content sidebar sidebar2"
+            "content2  content2  content2"
+            "footer footer footer";
 
         /* CENTRAGE */
         max-width: 1000px;
@@ -89,4 +93,12 @@ body {
 
 .footer {
     grid-area: footer;
+}
+.content2{
+    grid-area :content2;
+}
+.image{
+    grid-area :image;
+    max-width:100%;
+    
 }
